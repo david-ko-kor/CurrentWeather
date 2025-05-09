@@ -6,17 +6,18 @@ load_dotenv()
 apikey=os.getenv("apikey")
 lat=37.3514
 lon=127.9453
-url=f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&lang=kr&appid={apikey}"
+url=f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&lang=kr&appid={apikey}"
 result=requests.get(url)
 response=result.json()
-print("현재시간",response['list'][0]['dt_txt'])
-print("온도",response['list'][0]['main']['temp'])
-print("체감온도",response['list'][0]['main']['feels_like'])
-print("최고온도",response['list'][0]['main']['temp_max'])
-print("습도",response['list'][0]['main']['humidity'])
-print("기압",response['list'][0]['main']['pressure'])
-print("풍속",response['list'][0]['wind']['speed'])
-print("하늘",response['list'][0]['weather'][0]['description'])
+print(response)
+# print("현재시간",response['list'][0]['dt_txt'])
+# print("온도",response['list'][0]['main']['temp'])
+# print("체감온도",response['list'][0]['main']['feels_like'])
+# print("최고온도",response['list'][0]['main']['temp_max'])
+# print("습도",response['list'][0]['main']['humidity'])
+# print("기압",response['list'][0]['main']['pressure'])
+# print("풍속",response['list'][0]['wind']['speed'])
+# print("하늘",response['list'][0]['weather'][0]['description'])
 
 # print("날씨:",response["weather"][0]["description"])
 # print("현재온도:",response["main"]["temp"])
